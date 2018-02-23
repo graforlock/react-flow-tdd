@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IdeaSection renders component and matches current snapshot 1`] = `<div />`;

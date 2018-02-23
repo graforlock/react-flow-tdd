@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`actionTypes matches the current actionTypes snapshot 1`] = `
+Object {
+  "FETCH_DELETE_IDEA": "FETCH_DELETE_IDEA",
+  "FETCH_GET_ALL_IDEAS": "FETCH_GET_ALL_IDEAS",
+  "FETCH_GET_NEW_IDEA": "FETCH_GET_NEW_IDEA",
+  "FETCH_UPDATE_IDEA": "FETCH_UPDATE_IDEA",
+  "RECEIVE_ALL_IDEAS": "RECEIVE_ALL_IDEAS",
+  "RECEIVE_NEW_IDEA": "RECEIVE_NEW_IDEA",
+}
+`;
