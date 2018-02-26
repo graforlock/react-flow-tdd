@@ -1,18 +1,19 @@
 // @flow
-import actionTypes from './actionTypes'
+import * as actionTypes from './actionTypes'
+import type { IdeaRequest } from '../services/ideaService'
 
 export const fetchGetAllIdeas = () => ({
   type: actionTypes.FETCH_GET_ALL_IDEAS
 })
 
-export const fetchCreateIdea = (ideaId: number) => ({
+export const fetchCreateIdea = (idea: IdeaRequest) => ({
   type: actionTypes.FETCH_GET_ALL_IDEAS,
-  payload: ideaId
+  payload: idea
 })
 
-export const fetchUpdateIdea = (ideaId: number) => ({
+export const fetchUpdateIdea = (idea: IdeaRequest) => ({
   type: actionTypes.FETCH_UPDATE_IDEA,
-  payload: ideaId
+  payload: idea
 })
 
 export const fetchDeleteIdea = (ideaId: number) => ({

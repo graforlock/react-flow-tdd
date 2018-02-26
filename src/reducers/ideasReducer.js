@@ -30,3 +30,5 @@ const ideasReducer = (state: IdeasStore = initialState, action: IdeasReceiveActi
 }
 
 export default ideasReducer
+
+export type { IdeasStore }

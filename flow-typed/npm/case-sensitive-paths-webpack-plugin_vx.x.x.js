@@ -23,7 +23,6 @@ declare module 'case-sensitive-paths-webpack-plugin' {
  * needed.
  */
 
-
 // Filename aliases
 declare module 'case-sensitive-paths-webpack-plugin/index' {
   declare module.exports: $Exports<'case-sensitive-paths-webpack-plugin'>;

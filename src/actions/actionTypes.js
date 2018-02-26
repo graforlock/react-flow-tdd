@@ -1,4 +1,4 @@
-import type { IdeaResult, IdeaResults } from '../services/ideaService'
+import type { IdeaResult, IdeaRequest, IdeaResults } from '../services/ideaService'
 
 export const FETCH_GET_ALL_IDEAS = 'FETCH_GET_ALL_IDEAS'
 export const FETCH_CREATE_IDEA = 'FETCH_CREATE_IDEA'
@@ -26,7 +26,7 @@ type IdeasFetchAction = {
   FETCH_CREATE_IDEA |
   FETCH_UPDATE_IDEA |
   FETCH_DELETE_IDEA,
-  payload: ?number
+  payload?: number | IdeaRequest
 }
 
 type IdeasReceiveAction = {

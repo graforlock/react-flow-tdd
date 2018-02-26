@@ -1,12 +1,41 @@
 // @flow
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import './IdeaSection.css'
 
-type Props = {}
+import { fetchCreateIdea } from '../../actions'
+import type { IdeasFetchAction } from '../../actions/actionTypes'
+import type { IdeaRequest } from '../../services/ideaService'
+
+import IdeaItem from '../IdeaItem'
+import type { IdeasStore } from '../../reducers/ideasReducer'
+
+type Props = {
+  ideas: IdeasStore,
+  fetchCreateIdea: (idea: IdeaRequest) => IdeasFetchAction
+}
 
 class IdeaSection extends Component<Props> {
   render () {
-    return <div />
+    const { ideas } = this.props
+
+    return (
+      <section className='idea__section'>
+        <ul className='idea__list'>
+          { ideas.map(idea => <IdeaItem key={idea.id} idea={idea} />) }
+        </ul>
+        <section>
+          {/* CreateIdea */}
+        </section>
+      </section>
+    )
   }
 }
 
-export default IdeaSection
+const mapStateToProps = ({ ideas }) => {
+  return { ideas }
+}
+
+export default connect(mapStateToProps, {
+  fetchCreateIdea
+})(IdeaSection)

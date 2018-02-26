@@ -1,11 +1,11 @@
 // @flow
 type ReduxState = {
-  ideaList: Array<Object>,
+  ideas: Array<Object>,
   sortOption: ?string
 }
 
 const initialState: ReduxState = {
-  ideaList: [],
+  ideas: [],
   sortOption: null
 }
 

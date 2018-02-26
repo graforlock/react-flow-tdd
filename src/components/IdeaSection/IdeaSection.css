@@ -1,0 +1,7 @@
+.idea__list {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  list-style: none;
+  padding: 0;
+}

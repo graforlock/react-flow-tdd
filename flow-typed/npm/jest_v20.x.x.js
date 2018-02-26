@@ -444,7 +444,6 @@ declare var describe: {
   skip(name: string, fn: () => void): void,
 };
 
-
 /** An individual test unit */
 declare var it: {
   /**

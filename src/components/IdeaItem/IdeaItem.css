@@ -1,0 +1,87 @@
+.idea__item {
+  width: 12.5%;
+  min-width: 100px;
+  box-sizing: border-box;
+  margin: 7.5px;
+  border-radius: 7.5px;
+  box-shadow: gainsboro 0 2.5px 7.5px;
+}
+
+.idea__item-content {
+  position: relative;
+}
+
+.idea__item-content::after {
+  content: '';
+  display: inline-block;
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  
+  border-top: 5px solid white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  margin: 0 auto;
+}
+
+.idea__body {
+  margin: 0;
+  padding: 20px 5px;
+  font-size: 12px;
+  color: gray;
+}
+
+.idea__header, .idea__textarea {
+  margin: 0;
+  padding: 15px 0;
+  background: #32557E;
+  color: white;
+  position: relative;
+  border-radius: 7.5px 7.5px 0 0 ;
+}
+
+.idea__header h5 {
+  margin: 0;
+}
+
+.idea__textarea {
+  border-radius: 0;
+  background: transparent;
+  border: none;
+  width: 90%;
+  resize: none;
+  padding: 0;
+}
+
+.idea__textarea--gainsboro {
+  background: gainsboro;
+  color: gray;
+}
+
+.idea__delete-button {
+  cursor: pointer;
+}
+
+.idea__delete-item {
+  padding: 10px 0 0 7.5px;
+  height: 30px;
+  background: #F0F0F0;
+  text-align: left;
+}
+
+.idea__delete-text {
+  border: none;
+  background: transparent;
+  color: #CE0B16;
+  font-size: 10px;
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+.idea__delete-icon {
+  vertical-align: middle;
+  height: 12.5px;
+}
