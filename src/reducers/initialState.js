@@ -1,12 +1,12 @@
 // @flow
 type ReduxState = {
   ideaList: Array<Object>,
-  newIdea: ?Object
+  sortOption: ?string
 }
 
 const initialState: ReduxState = {
   ideaList: [],
-  newIdea: null
+  sortOption: null
 }
 
 export default initialState

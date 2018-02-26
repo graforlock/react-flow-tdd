@@ -1,15 +1,29 @@
+import type { IdeaResult, IdeaResults } from '../services/ideaService'
+
 export const FETCH_GET_ALL_IDEAS = 'FETCH_GET_ALL_IDEAS'
-export const FETCH_GET_NEW_IDEA = 'FETCH_GET_NEW_IDEA'
+export const FETCH_CREATE_IDEA = 'FETCH_CREATE_IDEA'
 export const FETCH_UPDATE_IDEA = 'FETCH_UPDATE_IDEA'
 export const FETCH_DELETE_IDEA = 'FETCH_DELETE_IDEA'
 
 export const RECEIVE_ALL_IDEAS = 'RECEIVE_ALL_IDEAS'
 export const RECEIVE_NEW_IDEA = 'RECEIVE_NEW_IDEA'
+export const RECEIVE_UPDATED_IDEA = 'RECEIVE_UPDATED_IDEA'
+export const RECEIVE_DELETED_IDEA = 'RECEIVE_DELETED_IDEA'
+
+export const REQUEST_GET_ALL_FAILURE = 'REQUEST_GET_ALL_FAILURE'
+export const REQUEST_CREATE_FAILURE = 'REQUEST_CREATE_FAILURE'
+export const REQUEST_UPDATE_FAILURE = 'REQUEST_UPDATE_FAILURE'
+export const REQUEST_DELETE_FAILURE = 'REQUEST_DELETE_FAILURE'
+
+export const REQUEST_GET_ALL_SUCCESS = 'REQUEST_GET_ALL_SUCCESS'
+export const REQUEST_CREATE_SUCCESS = 'REQUEST_CREATE_SUCCESS'
+export const REQUEST_UPDATE_SUCCESS = 'REQUEST_UPDATE_SUCCESS'
+export const REQUEST_DELETE_SUCCESS = 'REQUEST_DELETE_SUCCESS'
 
 type IdeasFetchAction = {
   type:
   FETCH_GET_ALL_IDEAS |
-  FETCH_GET_NEW_IDEA |
+  FETCH_CREATE_IDEA |
   FETCH_UPDATE_IDEA |
   FETCH_DELETE_IDEA,
   payload: ?number
@@ -18,8 +32,23 @@ type IdeasFetchAction = {
 type IdeasReceiveAction = {
   type:
   RECEIVE_ALL_IDEAS |
-  RECEIVE_NEW_IDEA,
-  payload: Array<Object>
+  RECEIVE_NEW_IDEA |
+  RECEIVE_UPDATED_IDEA |
+  RECEIVE_DELETED_IDEA,
+  payload: IdeaResult | IdeaResults
 }
 
-export type { IdeasFetchAction, IdeasReceiveAction }
+type IdeasRequestAction = {
+  type:
+  REQUEST_GET_ALL_FAILURE |
+  REQUEST_CREATE_FAILURE |
+  REQUEST_UPDATE_FAILURE |
+  REQUEST_DELETE_FAILURE |
+  REQUEST_GET_ALL_SUCCESS |
+  REQUEST_CREATE_SUCCESS |
+  REQUEST_UPDATE_SUCCESS |
+  REQUEST_DELETE_SUCCESS,
+  payload?: null
+}
+
+export type { IdeasFetchAction, IdeasReceiveAction, IdeasRequestAction }

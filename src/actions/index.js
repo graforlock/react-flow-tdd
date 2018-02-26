@@ -1,11 +1,11 @@
 // @flow
 import actionTypes from './actionTypes'
 
-export const fetchGetAllIdeas = () =>  ({
+export const fetchGetAllIdeas = () => ({
   type: actionTypes.FETCH_GET_ALL_IDEAS
 })
 
-export const fetchGetNewIdea = (ideaId: number) => ({
+export const fetchCreateIdea = (ideaId: number) => ({
   type: actionTypes.FETCH_GET_ALL_IDEAS,
   payload: ideaId
 })

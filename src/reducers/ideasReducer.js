@@ -1,21 +1,31 @@
 // @flow
 import * as actionTypes from '../actions/actionTypes'
-import type { IdeasFetchAction } from '../actions/actionTypes'
-import initialState from './initialState'
-import type { ReduxState } from './initialState'
+import type { IdeasReceiveAction } from '../actions/actionTypes'
+import type { IdeaIdInfo, IdeaResult, IdeaResults } from '../services/ideaService'
 
-const _initialState: ReduxState = initialState
+type IdeasStore = IdeaResults
 
-const ideasReducer = (state: ReduxState = _initialState, action: IdeasFetchAction): ReduxState => {
+const initialState: IdeasStore = []
+
+const ideasReducer = (state: IdeasStore = initialState, action: IdeasReceiveAction): IdeasStore => {
   switch (action.type) {
     case actionTypes.RECEIVE_ALL_IDEAS:
-      const ideaList = action.payload
-      return { ...state, ideaList }
+      return action.payload
     case actionTypes.RECEIVE_NEW_IDEA:
-      const newIdea = action.payload
-      return { ...state, newIdea }
+      const newIdea: IdeaResult = action.payload
+      return [...state, newIdea]
+    case actionTypes.RECEIVE_UPDATED_IDEA:
+      const updatedIdea: IdeaResult = action.payload
+      return state.map(idea =>
+        idea.id === updatedIdea.id ? updatedIdea : idea
+      )
+    case actionTypes.RECEIVE_DELETED_IDEA:
+      const deletedIdea: IdeaIdInfo = action.payload
+      return state.filter(idea =>
+        idea.id !== deletedIdea.id
+      )
     default:
-      return initialState
+      return state
   }
 }
 
