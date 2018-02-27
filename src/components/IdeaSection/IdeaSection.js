@@ -8,6 +8,7 @@ import type { IdeasFetchAction } from '../../actions/actionTypes'
 import type { IdeaRequest } from '../../services/ideaService'
 
 import IdeaItem from '../IdeaItem'
+import CreateIdea from '../CreateIdea'
 import type { IdeasStore } from '../../reducers/ideasReducer'
 
 type Props = {
@@ -21,11 +22,12 @@ class IdeaSection extends Component<Props> {
 
     return (
       <section className='idea__section'>
+        <header>Idea app</header>
         <ul className='idea__list'>
           { ideas.map(idea => <IdeaItem key={idea.id} idea={idea} />) }
         </ul>
-        <section>
-          {/* CreateIdea */}
+        <section className='idea__create'>
+          <CreateIdea />
         </section>
       </section>
     )

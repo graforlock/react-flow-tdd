@@ -34,7 +34,7 @@
   color: gray;
 }
 
-.idea__header, .idea__textarea {
+.idea__header {
   margin: 0;
   padding: 15px 0;
   background: #32557E;
@@ -45,20 +45,6 @@
 
 .idea__header h5 {
   margin: 0;
-}
-
-.idea__textarea {
-  border-radius: 0;
-  background: transparent;
-  border: none;
-  width: 90%;
-  resize: none;
-  padding: 0;
-}
-
-.idea__textarea--gainsboro {
-  background: gainsboro;
-  color: gray;
 }
 
 .idea__delete-button {

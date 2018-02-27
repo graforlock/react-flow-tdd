@@ -3,24 +3,35 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { fetchUpdateIdea } from '../../actions'
+import type { ChildrenArray } from 'react'
 import type { IdeaRequest } from '../../services/ideaService'
 import type { IdeasFetchAction } from '../../actions/actionTypes'
 
 type EditingField = 'TITLE' | 'BODY'
 
 type State = {
-  editing: boolean
+  editing: boolean,
+  letterCount: ?number
 }
 
 type Props = {
+  children: ChildrenArray<any>[],
   idea: IdeaRequest,
   field: EditingField,
   fetchUpdateIdea: (idea: IdeaRequest) => IdeasFetchAction
 }
 
+const MAX_LENGTH: number = 75
+
 class TextEditor extends React.Component<Props, State> {
   state: State = {
-    editing: false
+    editing: false,
+    letterCount: null
+  }
+
+  handleInput = e => {
+    const newCount: number = MAX_LENGTH - e.target.value.length
+    this.setState({ letterCount: newCount })
   }
 
   switchMode = () => {
@@ -43,27 +54,28 @@ class TextEditor extends React.Component<Props, State> {
     this.setState({ editing: false })
   }
 
+  renderChildren (): ChildrenArray<any>[] {
+    const { children } = this.props
+    return React.Children.map(children, (element) =>
+        React.cloneElement(element, { onClick: this.switchMode }))
+  }
+
   render () {
-    const { idea: { title, body }, field } = this.props
-    const { editing } = this.state
-    const defaultValue = field === 'TITLE' ? title : body
-
-    if (editing) {
-      return (
-        <textarea className='idea__textarea'
-          autoFocus defaultValue={defaultValue}
-          onBlur={e => this.handleBlur(e)}
-        />
-      )
-    }
-
-    if (field === 'TITLE') {
-      return <h5 onClick={this.switchMode}>{title}</h5>
-    }
-
-    if (field === 'BODY') {
-      return <p className='idea__body' onClick={this.switchMode}>{body}</p>
-    }
+    const { idea, field } = this.props
+    const { editing, letterCount } = this.state
+    const displayCount = letterCount && letterCount <= 15
+    return (
+      <section className='texteditor__container'>
+        { editing
+          ? <textarea className='idea__textarea' maxLength={MAX_LENGTH}
+            autoFocus defaultValue={idea[field.toLowerCase()]}
+            onBlur={e => this.handleBlur(e)}
+            onInput={e => this.handleInput(e)}
+          />
+          : this.renderChildren() }
+        <div>{ displayCount && letterCount }</div>
+      </section>
+    )
   }
 }
 

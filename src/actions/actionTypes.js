@@ -1,4 +1,5 @@
 import type { IdeaResult, IdeaRequest, IdeaResults } from '../services/ideaService'
+import type { EditingField } from '../reducers/editorReducer'
 
 export const FETCH_GET_ALL_IDEAS = 'FETCH_GET_ALL_IDEAS'
 export const FETCH_CREATE_IDEA = 'FETCH_CREATE_IDEA'
@@ -19,6 +20,27 @@ export const REQUEST_GET_ALL_SUCCESS = 'REQUEST_GET_ALL_SUCCESS'
 export const REQUEST_CREATE_SUCCESS = 'REQUEST_CREATE_SUCCESS'
 export const REQUEST_UPDATE_SUCCESS = 'REQUEST_UPDATE_SUCCESS'
 export const REQUEST_DELETE_SUCCESS = 'REQUEST_DELETE_SUCCESS'
+
+export const EDITOR_EDIT_TITLE = 'EDITOR_EDIT_TITLE'
+export const EDITOR_EDIT_BODY = 'EDITOR_EDIT_BODY'
+export const EDITOR_EDIT_CLEAR = 'EDITOR_EDIT_CLEAR'
+export const EDITOR_ENABLE_WRITING = 'EDITOR_ENABLE_WRITING'
+export const EDITOR_DISABLE_WRITING = 'EDITOR_DISABLE_WRITING'
+
+type EditorEditAction = {
+  type:
+  EDITOR_EDIT_BODY |
+  EDITOR_EDIT_TITLE |
+  EDITOR_EDIT_CLEAR,
+  payload: ?EditingField
+}
+
+type EditorWriteAction = {
+  type:
+  EDITOR_ENABLE_WRITING |
+  EDITOR_DISABLE_WRITING,
+  payload: ?EditingField
+}
 
 type IdeasFetchAction = {
   type:
@@ -51,4 +73,4 @@ type IdeasRequestAction = {
   payload?: null
 }
 
-export type { IdeasFetchAction, IdeasReceiveAction, IdeasRequestAction }
+export type { EditorEditAction, EditorWriteAction, IdeasFetchAction, IdeasReceiveAction, IdeasRequestAction }

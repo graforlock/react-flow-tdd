@@ -23,7 +23,8 @@ app.get('/api/ideas', (req, res) => {
 
 app.post('/api/ideas/new', (req, res) => {
   const { body } = req
-  body.id = ideas[ideas.length - 1].id + 1
+  const lastIdea = ideas[ideas.length - 1]
+  body.id = lastIdea ? lastIdea.id + 1 : 1
   body.created_date = new Date()
   ideas.push(body)
 

@@ -5,6 +5,7 @@ import rootReducer from '../reducers'
 import type { ActionCreator, Store } from 'redux'
 import type { SagaMiddlewareOptions, Task } from 'redux-saga'
 import type { ReduxState } from '../reducers/initialState'
+import persistState from 'redux-localstorage'
 
 type ReduxStore = Store<ReduxState, ActionCreator<*>> & { runSaga: Task<*> }
 
@@ -16,7 +17,8 @@ export default function configureStore (initialState: ReduxState): ReduxStore {
     compose(
       applyMiddleware(
         sagaMiddleware
-      )
+      ),
+      persistState()
     )
   )
 
