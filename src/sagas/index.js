@@ -2,8 +2,7 @@
 import { all, call, fork, put, takeEvery } from 'redux-saga/effects'
 import type { AllEffect, ForkEffect, Effect } from 'redux-saga'
 import * as actionTypes from '../actions/actionTypes'
-import type { IdeaFetchAction } from '../actions/actionTypes'
-import type { IdeaIdInfo, IdeaResult, IdeaResults } from '../services/ideaService'
+import type { IdeaFetchAction, IdeaIdInfo, IdeaResult, IdeaResults } from '../types'
 
 import * as ideaService from '../services/ideaService'
 

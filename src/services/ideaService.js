@@ -1,20 +1,6 @@
 // @flow
 import * as fetchService from './fetch'
-
-type IdeaResult = {
-  id: number,
-  title: string,
-  body: string,
-  created_date: Date
-}
-
-type IdeaRequest = IdeaResult
-
-type IdeaResults = Array<IdeaResult>
-
-type IdeaIdInfo = {
-  id: number
-}
+import type { IdeaIdInfo, IdeaResult, IdeaResults, IdeaRequest } from '../types'
 
 const headers: Headers = new Headers({
   'Accept': 'application/json, text/plain, */*',
@@ -65,5 +51,3 @@ export const deleteIdea = async (ideaId: number): Promise<IdeaIdInfo> => {
 
   return allIdeas
 }
-
-export type { IdeaIdInfo, IdeaResult, IdeaResults, IdeaRequest }

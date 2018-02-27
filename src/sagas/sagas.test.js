@@ -13,7 +13,7 @@ import rootSagas, {
   watchDeleteIdea
 } from './'
 import * as ideaService from '../services/ideaService'
-import type { IdeaIdInfo, IdeaResult, IdeaResults } from '../services/ideaService'
+import type { IdeaIdInfo, IdeaResult, IdeaResults } from '../types'
 
 describe('sagas', () => {
   const ideaIdInfo: IdeaIdInfo = { id: 1 }

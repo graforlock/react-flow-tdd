@@ -1,7 +1,6 @@
 // @flow
 import * as actionTypes from '../actions/actionTypes'
-import type { IdeasReceiveAction } from '../actions/actionTypes'
-import type { IdeaIdInfo, IdeaResult, IdeaResults } from '../services/ideaService'
+import type { IdeaIdInfo, IdeaResult, IdeaResults, IdeasReceiveAction } from '../types'
 
 type IdeasStore = IdeaResults
 

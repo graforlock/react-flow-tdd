@@ -1,6 +1,6 @@
 // @flow
 import * as actionTypes from './actionTypes'
-import type { IdeaRequest } from '../services/ideaService'
+import type { IdeaRequest } from '../types'
 
 export const fetchGetAllIdeas = () => ({
   type: actionTypes.FETCH_GET_ALL_IDEAS
