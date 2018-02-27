@@ -1,6 +1,6 @@
 // @flow
 import initialState from './initialState'
-import type { ReduxState } from './initialState'
+import type { ReduxState } from '../types'
 
 describe('initialState', () => {
   let state: ReduxState

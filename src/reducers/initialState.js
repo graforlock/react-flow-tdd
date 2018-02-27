@@ -7,8 +7,8 @@ const initialState: ReduxState = {
     writingMode: false,
     editedIdea: null
   },
-  sortOption: null
+  sortOption: null,
+  message: null
 }
 
 export default initialState
-export type { ReduxState }

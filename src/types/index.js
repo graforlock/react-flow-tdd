@@ -99,6 +99,19 @@ type IdeasRequestAction = {
   payload?: null
 }
 
+type MessageReceiveAction = {
+  type:
+  REQUEST_GET_ALL_FAILURE |
+  REQUEST_CREATE_FAILURE |
+  REQUEST_UPDATE_FAILURE |
+  REQUEST_DELETE_FAILURE |
+  REQUEST_GET_ALL_SUCCESS |
+  REQUEST_CREATE_SUCCESS |
+  REQUEST_UPDATE_SUCCESS |
+  REQUEST_DELETE_SUCCESS,
+  payload?: null
+}
+
 export type {
   IdeaResult,
   IdeaIdInfo,
@@ -110,6 +123,7 @@ export type {
   EditorStore,
   EditorEditAction,
   EditorWriteAction,
+  MessageReceiveAction,
   ReduxState,
   IdeasFetchAction,
   IdeasReceiveAction,

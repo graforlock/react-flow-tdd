@@ -60,7 +60,7 @@ describe('sagas', () => {
 
   describe('createIdea', () => {
     it('follows a correct generator logic', () => {
-      const iterable = createIdea({ payload: {} })
+      const iterable = createIdea({ payload: ideaResult })
 
       expect(iterable.next().value).toEqual(call(ideaService.createIdea, ideaResult))
       expect(iterable.next(ideaResult).value).toEqual(put({
@@ -76,7 +76,7 @@ describe('sagas', () => {
 
   describe('updateIdea', () => {
     it('follows a correct generator logic', () => {
-      const iterable = updateIdea({ payload: {} })
+      const iterable = updateIdea({ payload: ideaResult })
 
       expect(iterable.next().value).toEqual(call(ideaService.updateIdea, ideaResult))
       expect(iterable.next(ideaResult).value).toEqual(put({
@@ -92,9 +92,9 @@ describe('sagas', () => {
 
   describe('deleteIdea', () => {
     it('follows a correct generator logic', () => {
-      const iterable = deleteIdea({ payload: {} })
+      const iterable = deleteIdea({ payload: ideaIdInfo })
 
-      expect(iterable.next().value).toEqual(call(ideaService.deleteIdea, 1))
+      expect(iterable.next().value).toEqual(call(ideaService.deleteIdea, ideaIdInfo))
       expect(iterable.next(ideaIdInfo).value).toEqual(put({
         type: actionTypes.RECEIVE_DELETED_IDEA,
         payload: ideaIdInfo
