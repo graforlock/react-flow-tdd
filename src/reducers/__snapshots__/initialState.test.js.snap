@@ -2,7 +2,11 @@
 
 exports[`initialState matches the current initialState snapshot 1`] = `
 Object {
-  "ideaList": Array [],
-  "newIdea": null,
+  "editor": Object {
+    "editedIdea": null,
+    "writingMode": false,
+  },
+  "ideas": Array [],
+  "sortOption": null,
 }
 `;

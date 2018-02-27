@@ -1,3 +1,197 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`IdeaSection renders component and matches current snapshot 1`] = `<div />`;
+exports[`IdeaSection renders component and matches current snapshot 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <Connect(IdeaSection)>
+    <IdeaSection
+      fetchCreateIdea={[Function]}
+      ideas={
+        Array [
+          Object {
+            "body": "... body ...",
+            "created_date": 2018-02-27T13:15:42.954Z,
+            "id": 1,
+            "title": "Title",
+          },
+        ]
+      }
+    >
+      <section
+        className="idea__section"
+      >
+        <header>
+          Idea app
+        </header>
+        <ul
+          className="idea__list"
+        >
+          <Connect(IdeaItem)
+            idea={
+              Object {
+                "body": "... body ...",
+                "created_date": 2018-02-27T13:15:42.954Z,
+                "id": 1,
+                "title": "Title",
+              }
+            }
+            key="1"
+          >
+            <IdeaItem
+              fetchDeleteIdea={[Function]}
+              idea={
+                Object {
+                  "body": "... body ...",
+                  "created_date": 2018-02-27T13:15:42.954Z,
+                  "id": 1,
+                  "title": "Title",
+                }
+              }
+            >
+              <li
+                className="idea__item"
+              >
+                <section
+                  className="idea__item-content"
+                >
+                  <header
+                    className="idea__header"
+                  >
+                    <Connect(TextEditor)
+                      field="TITLE"
+                      idea={
+                        Object {
+                          "body": "... body ...",
+                          "created_date": 2018-02-27T13:15:42.954Z,
+                          "id": 1,
+                          "title": "Title",
+                        }
+                      }
+                    >
+                      <TextEditor
+                        clearEditor={[Function]}
+                        fetchUpdateIdea={[Function]}
+                        field="TITLE"
+                        idea={
+                          Object {
+                            "body": "... body ...",
+                            "created_date": 2018-02-27T13:15:42.954Z,
+                            "id": 1,
+                            "title": "Title",
+                          }
+                        }
+                        setEditorBody={[Function]}
+                        setEditorTitle={[Function]}
+                      >
+                        <section
+                          className="texteditor__container"
+                        >
+                          <h5
+                            className="idea__title"
+                            key=".0"
+                            onClick={[Function]}
+                          >
+                            Title
+                          </h5>
+                          <div />
+                        </section>
+                      </TextEditor>
+                    </Connect(TextEditor)>
+                  </header>
+                  <Connect(TextEditor)
+                    field="BODY"
+                    idea={
+                      Object {
+                        "body": "... body ...",
+                        "created_date": 2018-02-27T13:15:42.954Z,
+                        "id": 1,
+                        "title": "Title",
+                      }
+                    }
+                  >
+                    <TextEditor
+                      clearEditor={[Function]}
+                      fetchUpdateIdea={[Function]}
+                      field="BODY"
+                      idea={
+                        Object {
+                          "body": "... body ...",
+                          "created_date": 2018-02-27T13:15:42.954Z,
+                          "id": 1,
+                          "title": "Title",
+                        }
+                      }
+                      setEditorBody={[Function]}
+                      setEditorTitle={[Function]}
+                    >
+                      <section
+                        className="texteditor__container"
+                      >
+                        <p
+                          className="idea__body"
+                          key=".0"
+                          onClick={[Function]}
+                        >
+                          ... body ...
+                        </p>
+                        <div />
+                      </section>
+                    </TextEditor>
+                  </Connect(TextEditor)>
+                </section>
+                <div
+                  className="idea__delete-item"
+                >
+                  <div
+                    className="idea__delete-button"
+                    onClick={[Function]}
+                  >
+                    <img
+                      alt="Delete icon"
+                      className="idea__delete-icon"
+                      src="trash-icon.svg"
+                    />
+                    <button
+                      className="idea__delete-text"
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </div>
+              </li>
+            </IdeaItem>
+          </Connect(IdeaItem)>
+        </ul>
+        <section
+          className="idea__create"
+        >
+          <Connect(CreateIdea)>
+            <CreateIdea
+              disableEditorWriting={[Function]}
+              enableEditorWriting={[Function]}
+              fetchCreateIdea={[Function]}
+              writingMode={false}
+            >
+              <button
+                onClick={[Function]}
+              >
+                Add a new Idea
+              </button>
+            </CreateIdea>
+          </Connect(CreateIdea)>
+        </section>
+      </section>
+    </IdeaSection>
+  </Connect(IdeaSection)>
+</Provider>
+`;
