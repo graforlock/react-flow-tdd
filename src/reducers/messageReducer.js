@@ -8,12 +8,6 @@ const initialState: MessageStore = null
 
 const ideasReducer = (state: MessageStore = initialState, action: MessageReceiveAction): MessageStore => {
   switch (action.type) {
-    case actionTypes.REQUEST_CREATE_SUCCESS:
-      return 'Failed to fetch ideas!'
-    case actionTypes.REQUEST_UPDATE_SUCCESS:
-      return 'Failed to fetch ideas!'
-    case actionTypes.REQUEST_DELETE_SUCCESS:
-      return 'Failed to fetch ideas!'
     case actionTypes.REQUEST_GET_ALL_FAILURE:
       return 'Failed to fetch ideas!'
     case actionTypes.REQUEST_CREATE_FAILURE:
