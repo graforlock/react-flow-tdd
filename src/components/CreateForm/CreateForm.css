@@ -1,0 +1,16 @@
+.create-form__body {
+  border: 1px solid gainsboro;
+  resize: none;
+  border-radius: 2.5px;
+  margin: 10px 0;
+  padding: 3.5px;
+}
+
+.create-form__title {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid gainsboro;
+  border-radius: 2.5px;
+  padding: 3.5px;
+}

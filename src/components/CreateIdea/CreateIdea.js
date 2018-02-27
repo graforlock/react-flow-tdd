@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { fetchCreateIdea, enableEditorWriting, disableEditorWriting } from '../../actions'
 
 import CreateForm from '../CreateForm'
+import './CreateIdea.css'
 
 type Props = {
   writingMode: boolean,
@@ -13,17 +14,26 @@ type Props = {
   disableEditorWriting: Function
 }
 
-const CreateIdea = ({ fetchCreateIdea, writingMode, enableEditorWriting, disableEditorWriting }: Props) => {
+const CreateIdea = ({
+  fetchCreateIdea,
+  writingMode,
+  enableEditorWriting,
+  disableEditorWriting,
+  resetForm
+}: Props) => {
   const handleSubmit = e => {
     fetchCreateIdea(e)
   }
-
-  return writingMode
-          ? <section>
-            <CreateForm onSubmit={handleSubmit} />
-            <button onClick={disableEditorWriting}>Close</button>
-          </section>
-          : <button onClick={enableEditorWriting}>Add a new Idea</button>
+  const blueVariant = writingMode ? '' : 'create-idea__section--blue'
+  return (
+    <section className={`create-idea__section ${blueVariant}`}>
+      {writingMode
+        ? <CreateForm onSubmit={handleSubmit}
+          handleClose={disableEditorWriting} />
+        : <button className='create-idea__add'
+          onClick={enableEditorWriting}>+</button>}
+    </section>
+  )
 }
 
 const mapStateToProps = ({ editor: { writingMode } }) => {

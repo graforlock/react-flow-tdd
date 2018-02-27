@@ -1,0 +1,26 @@
+.create-idea__section {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  box-shadow: gainsboro 0 2.5px 7.5px;
+  border-top-left-radius: 10px;
+  padding: 20px;
+}
+
+.create-idea__section--white {
+  background: white;
+}
+
+.create-idea__section--blue {
+  background: #32557E;
+}
+
+.create-idea__add {
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-top-left-radius: 10px;
+  background: #32557E;
+}

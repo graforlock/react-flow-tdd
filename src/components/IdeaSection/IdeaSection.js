@@ -22,7 +22,6 @@ class IdeaSection extends Component<Props> {
 
     return (
       <section className='idea__section'>
-        <header>Idea app</header>
         <ul className='idea__list'>
           { ideas.map(idea => <IdeaItem key={idea.id} idea={idea} />) }
         </ul>
