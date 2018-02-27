@@ -9,7 +9,6 @@ import type { IdeaRequest } from '../../services/ideaService'
 import type { IdeasFetchAction } from '../../actions/actionTypes'
 
 type State = {
-  editing: boolean,
   letterCount: ?number
 }
 
@@ -28,7 +27,6 @@ const MAX_LENGTH: number = 75
 
 class TextEditor extends React.Component<Props, State> {
   state: State = {
-    editing: false,
     letterCount: null
   }
 
@@ -41,8 +39,6 @@ class TextEditor extends React.Component<Props, State> {
     const { field, idea, setEditorBody, setEditorTitle } = this.props
     if (field === 'TITLE') setEditorTitle(idea.id)
     if (field === 'BODY') setEditorBody(idea.id)
-    // const { editing } = this.state
-    // this.setState({ editing: !editing })
   }
 
   handleBlur = (e) => {
