@@ -1,1 +1,8 @@
-[]
+[
+  {
+    "id": 1,
+    "body": "here's body (...)",
+    "title": "Title",
+    "created_date": "Thu Jan 01 1970 00:00:02 GMT+0000 (BST)"
+  }
+]
