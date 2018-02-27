@@ -42,7 +42,6 @@ export const createIdea = async (idea: IdeaRequest): Promise<IdeaResult> => {
 }
 
 export const updateIdea = async (idea: IdeaRequest): Promise<IdeaResult> => {
-  console.log(idea)
   const options: RequestOptions = {
     method: 'PATCH',
     headers,

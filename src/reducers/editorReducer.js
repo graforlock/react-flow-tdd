@@ -50,4 +50,4 @@ const editorReducer = (state: EditorStore = initialState,
 
 export default editorReducer
 
-export type { EditorStore, EditingField }
+export type { EditingIdea, EditorStore, EditingField }

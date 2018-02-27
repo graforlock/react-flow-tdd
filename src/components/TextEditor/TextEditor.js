@@ -2,12 +2,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { fetchUpdateIdea } from '../../actions'
+import { fetchUpdateIdea, setEditorBody, setEditorTitle, clearEditor } from '../../actions'
 import type { ChildrenArray } from 'react'
+import type { EditingIdea, EditingField } from '../../reducers/editorReducer'
 import type { IdeaRequest } from '../../services/ideaService'
 import type { IdeasFetchAction } from '../../actions/actionTypes'
-
-type EditingField = 'TITLE' | 'BODY'
 
 type State = {
   editing: boolean,
@@ -18,7 +17,11 @@ type Props = {
   children: ChildrenArray<any>[],
   idea: IdeaRequest,
   field: EditingField,
-  fetchUpdateIdea: (idea: IdeaRequest) => IdeasFetchAction
+  editedIdea: ?EditingIdea,
+  fetchUpdateIdea: (idea: IdeaRequest) => IdeasFetchAction,
+  setEditorBody: Function,
+  setEditorTitle: Function,
+  clearEditor: Function
 }
 
 const MAX_LENGTH: number = 75
@@ -35,12 +38,15 @@ class TextEditor extends React.Component<Props, State> {
   }
 
   switchMode = () => {
-    const { editing } = this.state
-    this.setState({ editing: !editing })
+    const { field, idea, setEditorBody, setEditorTitle } = this.props
+    if (field === 'TITLE') setEditorTitle(idea.id)
+    if (field === 'BODY') setEditorBody(idea.id)
+    // const { editing } = this.state
+    // this.setState({ editing: !editing })
   }
 
   handleBlur = (e) => {
-    const { idea, field } = this.props
+    const { clearEditor, idea, field } = this.props
     const { target: { value } } = e
     if (field === 'TITLE') {
       this.props.fetchUpdateIdea({
@@ -51,7 +57,7 @@ class TextEditor extends React.Component<Props, State> {
         ...idea, ...{ body: value }
       })
     }
-    this.setState({ editing: false })
+    clearEditor()
   }
 
   renderChildren (): ChildrenArray<any>[] {
@@ -61,12 +67,12 @@ class TextEditor extends React.Component<Props, State> {
   }
 
   render () {
-    const { idea, field } = this.props
-    const { editing, letterCount } = this.state
+    const { editedIdea, idea, field } = this.props
+    const { letterCount } = this.state
     const displayCount = letterCount && letterCount <= 15
     return (
       <section className='texteditor__container'>
-        { editing
+        { editedIdea && editedIdea.id === idea.id && editedIdea.type === field
           ? <textarea className='idea__textarea' maxLength={MAX_LENGTH}
             autoFocus defaultValue={idea[field.toLowerCase()]}
             onBlur={e => this.handleBlur(e)}
@@ -79,6 +85,13 @@ class TextEditor extends React.Component<Props, State> {
   }
 }
 
-export default connect(null, {
+const mapStateToProps = ({ editor: { editedIdea } }) => {
+  return { editedIdea }
+}
+
+export default connect(mapStateToProps, {
+  setEditorBody,
+  setEditorTitle,
+  clearEditor,
   fetchUpdateIdea
 })(TextEditor)
