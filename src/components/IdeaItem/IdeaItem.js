@@ -7,8 +7,7 @@ import icon from './trash-icon.svg'
 import TextEditor from '../TextEditor'
 
 import { fetchDeleteIdea } from '../../actions'
-import type { IdeasFetchAction } from '../../actions/actionTypes'
-import type { IdeaResult } from '../../services/ideaService'
+import type { IdeasFetchAction, IdeaResult } from '../../types'
 
 type Props = {
   idea: IdeaResult,

@@ -1,11 +1,5 @@
 // @flow
-import type { EditorStore } from './editorReducer'
-
-type ReduxState = {
-  ideas: Array<Object>,
-  editor: EditorStore,
-  sortOption: ?string
-}
+import type { ReduxState } from '../types'
 
 const initialState: ReduxState = {
   ideas: [],

@@ -1,9 +1,19 @@
+// @flow
 import React from 'react'
+import { connect } from 'react-redux'
 import { Field, reduxForm } from 'redux-form'
+import type { FormProps } from 'redux-form'
+
 import './CreateForm.css'
 
-const ContactForm = props => {
-  const { handleSubmit, reset, handleClose } = props
+import { disableEditorWriting } from '../../actions'
+
+type Props = {
+  disableEditorWriting: Function
+} & FormProps
+
+let ContactForm = (props: Props) => {
+  const { handleSubmit, reset, disableEditorWriting } = props
   const handleSubmitAndClear = e => {
     handleSubmit(e)
     reset()
@@ -19,10 +29,14 @@ const ContactForm = props => {
           name='body' component='textarea' rows='10' type='text' />
       </div>
       <button type='submit'>Add</button>
-      <button onClick={handleClose}>Close</button>
+      <button onClick={disableEditorWriting}>Close</button>
     </form>
   )
 }
+
+ContactForm = connect(null, {
+  disableEditorWriting
+})(ContactForm)
 
 export default reduxForm({
   form: 'contact'

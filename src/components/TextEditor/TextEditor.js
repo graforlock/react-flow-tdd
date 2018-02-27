@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 
 import { fetchUpdateIdea, setEditorBody, setEditorTitle, clearEditor } from '../../actions'
 import type { ChildrenArray } from 'react'
-import type { EditingIdea, EditingField } from '../../reducers/editorReducer'
-import type { IdeaRequest } from '../../services/ideaService'
-import type { IdeasFetchAction } from '../../actions/actionTypes'
+import type { EditingIdea, EditingField, IdeaRequest, IdeasFetchAction } from '../../types'
 
 type State = {
   letterCount: ?number

@@ -1,14 +1,6 @@
 // @flow
 import * as actionTypes from '../actions/actionTypes'
-import type { EditorEditAction, EditorWriteAction } from '../actions/actionTypes'
-
-type EditingField = 'TITLE' | 'BODY'
-type EditingIdea = { id: number, type: EditingField }
-
-type EditorStore = {
-    writingMode: boolean,
-    editedIdea: ?EditingIdea
-}
+import type { EditingField, EditingIdea, EditorEditAction, EditorWriteAction, EditorStore } from '../types'
 
 const initialState: EditorStore = {
   writingMode: false,

@@ -2,8 +2,7 @@
 import React from 'react'
 import configureStore from 'redux-mock-store'
 import { Provider } from 'react-redux'
-import type { MockStore } from 'redux-mock-store'
-import type { ShallowWrapper } from 'enzyme'
+import type { ReactWrapper } from 'enzyme'
 import { mount } from 'enzyme'
 
 import IdeaSection from './IdeaSection'
@@ -16,11 +15,11 @@ describe('IdeaSection', () => {
     id: 1,
     title: 'Title',
     body: '... body ...',
-    created_date: new Date()
+    created_date: new Date('2049')
   }
   const initialState = { ideas: [idea], editor: { writingMode: false } }
-  let wrapper: ShallowWrapper
-  let store: MockStore<any>
+  let store
+  let wrapper: ReactWrapper
 
   beforeEach(() => {
     store = mockStore(initialState)

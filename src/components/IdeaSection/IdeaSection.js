@@ -4,12 +4,10 @@ import { connect } from 'react-redux'
 import './IdeaSection.css'
 
 import { fetchCreateIdea } from '../../actions'
-import type { IdeasFetchAction } from '../../actions/actionTypes'
-import type { IdeaRequest } from '../../services/ideaService'
+import type { IdeasFetchAction, IdeaRequest, IdeasStore } from '../../types'
 
 import IdeaItem from '../IdeaItem'
 import CreateIdea from '../CreateIdea'
-import type { IdeasStore } from '../../reducers/ideasReducer'
 
 type Props = {
   ideas: IdeasStore,

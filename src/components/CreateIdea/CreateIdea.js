@@ -2,7 +2,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { fetchCreateIdea, enableEditorWriting, disableEditorWriting } from '../../actions'
+import { fetchCreateIdea, enableEditorWriting } from '../../actions'
 
 import CreateForm from '../CreateForm'
 import './CreateIdea.css'
@@ -10,15 +10,13 @@ import './CreateIdea.css'
 type Props = {
   writingMode: boolean,
   fetchCreateIdea: Function,
-  enableEditorWriting: Function,
-  disableEditorWriting: Function
+  enableEditorWriting: Function
 }
 
 const CreateIdea = ({
   fetchCreateIdea,
   writingMode,
   enableEditorWriting,
-  disableEditorWriting,
   resetForm
 }: Props) => {
   const handleSubmit = e => {
@@ -28,8 +26,7 @@ const CreateIdea = ({
   return (
     <section className={`create-idea__section ${blueVariant}`}>
       {writingMode
-        ? <CreateForm onSubmit={handleSubmit}
-          handleClose={disableEditorWriting} />
+        ? <CreateForm onSubmit={handleSubmit} />
         : <button className='create-idea__add'
           onClick={enableEditorWriting}>+</button>}
     </section>
@@ -42,6 +39,5 @@ const mapStateToProps = ({ editor: { writingMode } }) => {
 
 export default connect(mapStateToProps, {
   fetchCreateIdea,
-  enableEditorWriting,
-  disableEditorWriting
+  enableEditorWriting
 })(CreateIdea)
