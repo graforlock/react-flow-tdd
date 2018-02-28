@@ -4,6 +4,10 @@ exports[`TextEditor renders component and matches current default snapshot 1`] =
 <section
   className="texteditor__container"
 >
+  <div
+    key=".0"
+    onClick={[Function]}
+  />
   <div />
 </section>
 `;

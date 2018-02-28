@@ -28,7 +28,7 @@ class TextEditor extends React.Component<Props, State> {
     letterCount: null
   }
 
-  handleInput = e => {
+  handleInput = (e: any) => {
     const newCount: number = MAX_LENGTH - e.target.value.length
     this.setState({ letterCount: newCount })
   }
@@ -39,7 +39,7 @@ class TextEditor extends React.Component<Props, State> {
     if (field === 'BODY') setEditorBody(idea.id)
   }
 
-  handleBlur = (e) => {
+  handleBlur = (e: any) => {
     const { clearEditor, idea, field } = this.props
     const { target: { value } } = e
     if (field === 'TITLE') {

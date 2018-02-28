@@ -11,6 +11,15 @@
   width: 100%;
   box-sizing: border-box;
   border: 1px solid gainsboro;
-  border-radius: 2.5px;
+  border-radius: 5px;
   padding: 3.5px;
+}
+
+.create-form__add, .create-form__close {
+  background: #32557E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 0 7.5px;
+  padding: 10px 12px
 }

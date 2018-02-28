@@ -1,4 +1,7 @@
 .idea__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 12.5%;
   min-width: 100px;
   box-sizing: border-box;

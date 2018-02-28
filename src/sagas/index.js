@@ -8,6 +8,7 @@ import * as ideaService from '../services/ideaService'
 
 export function * getAllIdeas (): Generator<Effect, void, any> {
   try {
+    yield put({ type: actionTypes.CLEAR_MESSAGE })
     const allIdeasResponse: IdeaResults = yield call(ideaService.getAllIdeas)
     yield put({ type: actionTypes.RECEIVE_ALL_IDEAS, payload: allIdeasResponse })
     yield put({ type: actionTypes.REQUEST_GET_ALL_SUCCESS })
@@ -19,6 +20,7 @@ export function * getAllIdeas (): Generator<Effect, void, any> {
 
 export function * createIdea (action: IdeaFetchAction): Generator<Effect, void, any> {
   try {
+    yield put({ type: actionTypes.CLEAR_MESSAGE })
     const newIdeaResponse: IdeaResult = yield call(ideaService.createIdea, action.payload)
     yield put({ type: actionTypes.RECEIVE_NEW_IDEA, payload: newIdeaResponse })
     yield put({ type: actionTypes.REQUEST_CREATE_SUCCESS })
@@ -30,6 +32,7 @@ export function * createIdea (action: IdeaFetchAction): Generator<Effect, void, 
 
 export function * updateIdea (action: IdeaFetchAction): Generator<Effect, void, any> {
   try {
+    yield put({ type: actionTypes.CLEAR_MESSAGE })
     const updateIdeaResponse: IdeaResult = yield call(ideaService.updateIdea, action.payload)
     yield put({ type: actionTypes.RECEIVE_UPDATED_IDEA, payload: updateIdeaResponse })
     yield put({ type: actionTypes.REQUEST_UPDATE_SUCCESS })
@@ -41,6 +44,7 @@ export function * updateIdea (action: IdeaFetchAction): Generator<Effect, void, 
 
 export function * deleteIdea (action: IdeaFetchAction): Generator<Effect, void, any> {
   try {
+    yield put({ type: actionTypes.CLEAR_MESSAGE })
     const deleteIdeaResponse: IdeaIdInfo = yield call(ideaService.deleteIdea, action.payload)
     yield put({ type: actionTypes.RECEIVE_DELETED_IDEA, payload: deleteIdeaResponse })
     yield put({ type: actionTypes.REQUEST_DELETE_SUCCESS })

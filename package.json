@@ -114,6 +114,7 @@
     "parser": "babel-eslint",
     "globals": [
       "Generator",
+      "Event",
       "Headers",
       "Iterable",
       "RequestOptions",

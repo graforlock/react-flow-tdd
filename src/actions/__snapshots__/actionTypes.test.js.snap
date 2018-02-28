@@ -2,7 +2,7 @@
 
 exports[`actionTypes matches the current actionTypes snapshot 1`] = `
 Object {
-  "CLEAR_ERROR_MESSAGE": "CLEAR_ERROR_MESSAGE",
+  "CLEAR_MESSAGE": "CLEAR_MESSAGE",
   "EDITOR_DISABLE_WRITING": "EDITOR_DISABLE_WRITING",
   "EDITOR_EDIT_BODY": "EDITOR_EDIT_BODY",
   "EDITOR_EDIT_CLEAR": "EDITOR_EDIT_CLEAR",

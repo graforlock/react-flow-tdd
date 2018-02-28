@@ -16,6 +16,8 @@ const ideasReducer = (state: MessageStore = initialState, action: MessageReceive
       return 'Failed to update an idea!'
     case actionTypes.REQUEST_DELETE_FAILURE:
       return 'Failed to delete an idea!'
+    case actionTypes.CLEAR_MESSAGE:
+      return null
     default:
       return state
   }
