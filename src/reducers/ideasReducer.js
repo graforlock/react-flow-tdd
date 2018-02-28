@@ -1,6 +1,6 @@
 // @flow
 import * as actionTypes from '../actions/actionTypes'
-import type { IdeaIdInfo, IdeaResult, IdeaResults, IdeasReceiveAction } from '../types'
+import type { IdeaResults, IdeasReceiveAction } from '../types'
 
 type IdeasStore = IdeaResults
 
@@ -11,17 +11,16 @@ const ideasReducer = (state: IdeasStore = initialState, action: IdeasReceiveActi
     case actionTypes.RECEIVE_ALL_IDEAS:
       return action.payload
     case actionTypes.RECEIVE_NEW_IDEA:
-      const newIdea: IdeaResult = action.payload
-      return [...state, newIdea]
+      return [...state, action.payload]
     case actionTypes.RECEIVE_UPDATED_IDEA:
-      const updatedIdea: IdeaResult = action.payload
       return state.map(idea =>
-        idea.id === updatedIdea.id ? updatedIdea : idea
-      )
+        idea.id === action.payload.id
+          ? action.payload
+          : idea
+        )
     case actionTypes.RECEIVE_DELETED_IDEA:
-      const deletedIdea: IdeaIdInfo = action.payload
       return state.filter(idea =>
-        idea.id !== deletedIdea.id
+        idea.id !== action.payload.id
       )
     default:
       return state
