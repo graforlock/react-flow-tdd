@@ -83,6 +83,7 @@ const mapStateToProps = ({ editor: { editedIdea } }) => {
   return { editedIdea }
 }
 
+export { TextEditor }
 export default connect(mapStateToProps, {
   setEditorBody,
   setEditorTitle,

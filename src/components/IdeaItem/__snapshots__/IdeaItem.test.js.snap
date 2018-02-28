@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`IdeaItem renders component and matches current default snapshot 1`] = `
+<li
+  className="idea__item"
+>
+  <section
+    className="idea__item-content"
+  >
+    <header
+      className="idea__header"
+    >
+      <Connect(TextEditor)
+        field="TITLE"
+        idea={
+          Object {
+            "body": "... body ...",
+            "created_date": 2049-01-01T00:00:00.000Z,
+            "id": 1,
+            "title": "Title",
+          }
+        }
+      >
+        <h5
+          className="idea__title"
+        >
+          Title
+        </h5>
+      </Connect(TextEditor)>
+    </header>
+    <Connect(TextEditor)
+      field="BODY"
+      idea={
+        Object {
+          "body": "... body ...",
+          "created_date": 2049-01-01T00:00:00.000Z,
+          "id": 1,
+          "title": "Title",
+        }
+      }
+    >
+      <p
+        className="idea__body"
+      >
+        ... body ...
+      </p>
+    </Connect(TextEditor)>
+  </section>
+  <div
+    className="idea__delete-item"
+  >
+    <div
+      className="idea__delete-button"
+      onClick={[Function]}
+    >
+      <img
+        alt="Delete icon"
+        className="idea__delete-icon"
+        src="trash-icon.svg"
+      />
+      <button
+        className="idea__delete-text"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</li>
+`;

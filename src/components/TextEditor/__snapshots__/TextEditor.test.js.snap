@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TextEditor renders component and matches current default snapshot 1`] = `
+<section
+  className="texteditor__container"
+>
+  <div />
+</section>
+`;

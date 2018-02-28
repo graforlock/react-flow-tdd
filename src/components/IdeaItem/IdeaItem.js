@@ -39,6 +39,8 @@ class IdeaItem extends React.Component<Props> {
     )
   }
 }
+
+export { IdeaItem }
 export default connect(null, {
   fetchDeleteIdea
 })(IdeaItem)

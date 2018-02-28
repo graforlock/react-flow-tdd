@@ -37,6 +37,7 @@ const mapStateToProps = ({ editor: { writingMode } }) => {
   return { writingMode }
 }
 
+export { CreateIdea }
 export default connect(mapStateToProps, {
   fetchCreateIdea,
   enableEditorWriting

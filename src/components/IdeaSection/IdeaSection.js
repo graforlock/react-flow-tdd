@@ -37,6 +37,7 @@ const mapStateToProps = ({ ideas, message }) => {
   return { ideas, message }
 }
 
+export { IdeaSection }
 export default connect(mapStateToProps, {
   fetchCreateIdea
 })(IdeaSection)

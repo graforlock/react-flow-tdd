@@ -20,14 +20,14 @@ let ContactForm = (props: Props) => {
   }
   return (
     <form onSubmit={handleSubmitAndClear}>
-      <div>
+      <fieldset>
         <Field className='create-form__title' placeholder='My title..'
           name='title' component='input' type='text' />
-      </div>
-      <div>
+      </fieldset>
+      <fieldset>
         <Field className='create-form__body' placeholder='My content..'
           name='body' component='textarea' rows='10' type='text' />
-      </div>
+      </fieldset>
       <button type='submit'>Add</button>
       <button onClick={disableEditorWriting}>Close</button>
     </form>

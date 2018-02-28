@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateIdea renders component and matches current default snapshot 1`] = `
+<section
+  className="create-idea__section create-idea__section--blue"
+>
+  <button
+    className="create-idea__add"
+    onClick={[Function]}
+  >
+    +
+  </button>
+</section>
+`;
+
+exports[`CreateIdea renders component and matches snapshot when writingMode is true 1`] = `
+<section
+  className="create-idea__section "
+>
+  <ReduxForm
+    onSubmit={[Function]}
+  />
+</section>
+`;
