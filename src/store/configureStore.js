@@ -9,17 +9,19 @@ import persistState from 'redux-localstorage'
 
 type ReduxStore = Store<ReduxState, ActionCreator<*>> & { runSaga: Task<*> }
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 export default function configureStore (initialState: ReduxState): ReduxStore {
   const sagaMiddleware: SagaMiddlewareOptions<any> = createSagaMiddleware()
   const store = createStore(
     rootReducer,
     initialState,
-    compose(
+    composeEnhancers(
       applyMiddleware(
         sagaMiddleware
       ),
       persistState()
-    )
+    ),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 
   store.runSaga = sagaMiddleware.run
